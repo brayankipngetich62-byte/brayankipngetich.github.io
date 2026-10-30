@@ -796,3 +796,33 @@ font-family: "Patrick Hand", cursive !important;
     z-index: -1 !important;
   }
 }
+/* FIX PHONE PHOTO - BRING BACK */
+@media (max-width: 768px) {
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-top: 80px !important;
+  }
+  .hero img, .hero .portrait, .hero .hero-img, .hero-img {
+    position: relative !important;
+    z-index: 2 !important;
+    opacity: 1 !important;
+    width: 85% !important;
+    max-width: 340px !important;
+    height: auto !important;
+    margin: 25px auto 0 !important;
+    display: block !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    border-radius: 24px !important;
+  }
+  .hero h1, .hero .title, .hero p {
+    text-align: center !important;
+  }
+  .hero .buttons, .hero .cta {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
