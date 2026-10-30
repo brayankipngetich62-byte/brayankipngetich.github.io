@@ -753,3 +753,46 @@ html body .socials a {
   font-size: 18px !important;
 }
 font-family: "Patrick Hand", cursive !important;
+/* FIX PHONE VIEW - PASTE AT VERY BOTTOM */
+@media (max-width: 768px) {
+  html body {
+    overflow-x: hidden !important;
+  }
+  html body .nav,
+  html body nav {
+    padding: 12px 14px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  html body .hero,
+  html body .section.hero {
+    padding: 90px 18px 40px !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, #052a4a 80%) !important;
+  }
+  html body .hero h1,
+  html body .hero .title {
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+    text-align: left !important;
+  }
+  html body .hero .buttons,
+  html body .hero .cta {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+  /* hide your face photo bleeding through on mobile */
+  html body .hero img,
+  html body .hero .portrait {
+    opacity: 0.35 !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: -1 !important;
+  }
+}
