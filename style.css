@@ -1,0 +1,838 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap");
+
+:root {
+  --glass: rgba(6, 90, 130, 0.22);
+  --glass-strong: rgba(6, 60, 100, 0.42);
+  --glass-border: rgba(126, 232, 255, 0.18);
+  --cyan: #7ee8ff;
+  --blue: #00d4ff;
+  --site-max: 1280px;
+  --content-max: 1120px;
+}
+
+* {
+  font-family: "Caveat", "Patrick Hand", cursive !important;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(
+    120% 120% at 15% 10%,
+    #00a8cc 0%,
+    #0077a8 20%,
+    #022a4a 60%,
+    #011a33 100%
+  ) !important;
+  background-attachment: fixed !important;
+  background-color: #022a4a;
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  max-width: var(--site-max);
+  margin: 0 auto;
+}
+.brand {
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #fff;
+}
+.brand b {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9px;
+}
+.nav {
+  display: flex;
+  gap: 28px;
+}
+.nav a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nav a:hover {
+  color: var(--cyan);
+}
+.hire {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* HERO - More Than - BIGGER FLUID */
+.hero-ocean {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(20px, 4vw, 48px) !important;
+  overflow: hidden;
+  background: radial-gradient(
+    90% 90% at 20% 20%,
+    #00a8cc 0%,
+    #0077a8 25%,
+    #022a4a 70%
+  );
+}
+.hero-ocean::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 212, 255, 0.15) 0%,
+    transparent 50%,
+    rgba(0, 90, 130, 0.4) 100%
+  );
+  z-index: 1;
+}
+.hero-bg-right {
+  position: absolute;
+  right: -3%;
+  top: 0;
+  width: 58%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 12%;
+  background-repeat: no-repeat;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 18%,
+    rgba(0, 0, 0, 0.7) 38%,
+    black 58%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 18%,
+    rgba(0, 0, 0, 0.7) 38%,
+    black 58%
+  );
+  filter: brightness(1.1) saturate(1.1);
+  z-index: 2;
+}
+.hero-fade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #022a4a 0%,
+      #022a4a 35%,
+      rgba(2, 42, 74, 0.2) 60%,
+      transparent 78%
+    ),
+    linear-gradient(180deg, transparent 60%, #022a4a 95%);
+  z-index: 3;
+}
+.hero-inner {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: var(--site-max);
+  margin: 0 auto;
+  padding: clamp(120px, 12vw, 180px) 0 clamp(60px, 6vw, 90px) !important;
+}
+.hero-inner .kicker {
+  color: var(--cyan) !important;
+  font-size: clamp(12px, 0.9vw, 16px) !important;
+  letter-spacing: 0.12em;
+  margin-bottom: 18px;
+  display: block;
+}
+.hero-inner h1 {
+  color: #fff !important;
+  font-size: clamp(54px, 6.5vw, 110px) !important;
+  line-height: 0.88 !important;
+  max-width: 720px !important;
+  margin: 0 0 22px;
+  font-weight: 700;
+}
+.hero-inner h1 i {
+  color: var(--cyan) !important;
+  font-style: normal;
+}
+.hero-inner p {
+  color: rgba(232, 248, 255, 0.9) !important;
+  font-size: clamp(18px, 1.35vw, 22px) !important;
+  max-width: 520px !important;
+  line-height: 1.5;
+}
+.scroll-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  width: 100%;
+  max-width: var(--site-max);
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+}
+
+/* SECTIONS - FLUID FILL */
+.section.long {
+  padding: clamp(50px, 7vw, 110px) clamp(16px, 3.5vw, 48px) !important;
+  display: flex !important;
+  justify-content: center !important;
+  background: var(--glass) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1px solid var(--glass-border);
+  position: relative;
+}
+.section.long .section-inner,
+.section.long .head,
+.section.long .two {
+  width: min(92vw, var(--content-max)) !important;
+  max-width: var(--content-max) !important;
+  margin: 0 auto !important;
+  background: var(--glass-strong) !important;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 32px !important;
+  padding: clamp(24px, 3.5vw, 56px) !important;
+  box-shadow:
+    0 20px 60px rgba(1, 26, 51, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+.section.long h2 {
+  font-size: clamp(38px, 4.5vw, 72px) !important;
+  line-height: 0.92 !important;
+  margin: 0 0 18px;
+  color: white !important;
+  font-weight: 700;
+}
+.section.long h2 i {
+  color: var(--cyan) !important;
+  font-style: normal;
+  display: inline-block;
+}
+.eyebrow {
+  color: var(--cyan) !important;
+  font-size: clamp(12px, 0.9vw, 14px) !important;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+  display: block;
+  font-weight: 700;
+}
+
+/* Story inner card */
+.section.long .copy {
+  background: rgba(2, 38, 70, 0.55) !important;
+  border: 1px solid rgba(126, 232, 255, 0.12) !important;
+  border-radius: 22px !important;
+  padding: clamp(20px, 2.5vw, 36px) !important;
+  margin-top: 24px !important;
+  display: grid !important;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 320px), 1fr)
+  ) !important;
+  gap: clamp(18px, 2vw, 32px) !important;
+}
+.copy p {
+  font-size: clamp(18px, 1.35vw, 22px) !important;
+  line-height: 1.7 !important;
+  color: rgba(232, 248, 255, 0.9) !important;
+  margin: 0 !important;
+}
+
+/* CARDS */
+.cards,
+.worlds {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 24px;
+}
+.cards article,
+.worlds article,
+.feature,
+.principles > div {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(126, 232, 255, 0.08)
+  ) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 22px;
+  padding: 28px;
+  transition: 0.35s;
+}
+.cards article:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+.cards h3 {
+  font-size: 26px !important;
+}
+
+.btn {
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-size: 18px !important;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.3s;
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+.btn.primary {
+  background: linear-gradient(90deg, #00d4ff, #7ee8ff) !important;
+  color: #022a4a !important;
+  border: 0 !important;
+}
+blockquote {
+  font-size: clamp(26px, 2vw, 34px) !important;
+  border-left: 3px solid var(--cyan);
+  padding-left: 18px;
+}
+
+/* CONNECT */
+.connect.long {
+  background: radial-gradient(
+    100% 100% at 80% 20%,
+    rgba(0, 212, 255, 0.18) 0%,
+    rgba(6, 90, 130, 0.35) 30%,
+    rgba(2, 42, 74, 0.85) 70%
+  ) !important;
+  padding: clamp(60px, 8vw, 110px) clamp(16px, 3.5vw, 48px) !important;
+}
+.connect .bk {
+  font-size: clamp(80px, 14vw, 160px) !important;
+  opacity: 0.06 !important;
+  color: var(--cyan) !important;
+  position: absolute;
+  right: 40px;
+  bottom: 10px;
+}
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+.socials .btn.wa {
+  background: linear-gradient(90deg, #25d366, #00e676) !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 32px;
+  font-size: 15px;
+  max-width: var(--site-max);
+  margin: 0 auto;
+  opacity: 0.7;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.7s;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 16px 20px;
+  }
+  .nav {
+    display: none;
+  }
+  .hero-bg-right {
+    width: 100%;
+    height: 68%;
+    top: auto;
+    bottom: 0;
+    opacity: 0.35;
+    mask-image: linear-gradient(180deg, transparent 0%, black 40%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 40%);
+  }
+  .section.long .copy {
+    grid-template-columns: 1fr !important;
+  }
+  .socials .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+/* KEEP OUTER CARD, KILL ONLY INNER OVERLAPPING CARD */
+.section.long .section-inner,
+.section.long .head,
+.section.long .two {
+  background: var(--glass-strong) !important;
+  backdrop-filter: blur(22px) !important;
+  -webkit-backdrop-filter: blur(22px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 32px !important;
+  box-shadow:
+    0 20px 60px rgba(1, 26, 51, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  /* FLEXIBLE - expands */
+  width: min(94vw, 1160px) !important;
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+  padding: clamp(28px, 3.5vw, 56px) !important;
+}
+
+/* KILL ONLY THE INNER OVERLAPPING ONE */
+.section.long .copy,
+.section.long .two .copy,
+.section.long .head + div,
+.section.long .two > div:last-child {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin-top: 32px !important;
+  /* Flexible text - 2 cols desktop, 1 col mobile */
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px 48px !important;
+}
+
+.section.long .copy p {
+  margin: 0 !important;
+}
+
+@media (max-width: 800px) {
+  .section.long .section-inner,
+  .section.long .head,
+  .section.long .two {
+    width: 92vw !important;
+    padding: 28px 22px !important;
+  }
+  .section.long .copy,
+  .section.long .two .copy {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+/* FINAL KILL - ONLY OUTER CARD STAYS - HEAVY FORCE */
+html body .section.long .section-inner,
+html body .section.long .head,
+html body .section.long .two {
+  width: min(94vw, 1160px) !important;
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+  padding: clamp(28px, 3.5vw, 56px) !important;
+  background: var(--glass-strong) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 32px !important;
+  display: block !important;
+}
+
+/* Kill EVERY inner card that overlaps - no matter its name */
+html body .section.long .copy,
+html body .section.long .copy > div,
+html body .section.long .copy > div > div,
+html body .section.long .two > div:last-child,
+html body .section.long .two > div:last-child > div,
+html body .section.long .section-inner > div:last-child,
+html body .section.long .section-inner > div:nth-child(3) {
+  background: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-top: 32px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* The text grid inside - flexible */
+html body .section.long .copy {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px 48px !important;
+}
+
+html body .section.long .copy p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 800px) {
+  html body .section.long .copy {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* UNIVERSAL FLEX - ALL SECTIONS + SLIDES EXPAND TO ARROWS */
+html body .section.long,
+html body .connect.long {
+  padding-left: 3vw !important;
+  padding-right: 3vw !important;
+}
+
+html body .section.long .section-inner,
+html body .section.long .two,
+html body .section.long .head,
+html body .connect.long .section-inner,
+html body .hero-inner,
+html body .scroll-hint,
+html body footer,
+html body header {
+  width: 90vw !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Slides / Worlds / Cards / Slider - all flexible */
+html body .worlds,
+html body .cards,
+html body .slides,
+html body .slider,
+html body .slide-track,
+html body .featured,
+html body [class*="slide"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Keep inner overlap killed for all */
+html body .section.long .copy,
+html body .section.long .copy > div,
+html body .section.long .two > div:last-child {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+@media (min-width: 1600px) {
+  html body .section.long .section-inner,
+  html body .section.long .two,
+  html body .connect.long .section-inner,
+  html body .hero-inner {
+    width: 88vw !important;
+    max-width: 1600px !important;
+  }
+}
+
+@media (max-width: 699px) {
+  html body .section.long .section-inner,
+  html body .section.long .two,
+  html body .connect.long .section-inner,
+  html body .hero-inner {
+    width: 92vw !important;
+    max-width: 92vw !important;
+  }
+}
+/* FLOW NOT PRESENTATION - NO LINES, SMOOTH OCEAN */
+html body {
+  scroll-behavior: smooth !important;
+}
+
+html body .section.long,
+html body .connect.long {
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  padding: 110px 3vw !important;
+}
+
+/* Outer glass - softer, no hard line */
+html body .section.long .section-inner,
+html body .section.long .two,
+html body .section.long .head {
+  background: rgba(6, 60, 100, 0.22) !important;
+  backdrop-filter: blur(18px) !important;
+  border: 1px solid rgba(126, 232, 255, 0.08) !important;
+  box-shadow: none !important;
+  border-radius: 28px !important;
+  width: 90vw !important;
+  max-width: 1400px !important;
+  transition: all 0.6s ease !important;
+}
+
+html body .section.long .section-inner:hover,
+html body .section.long .two:hover {
+  border-color: rgba(126, 232, 255, 0.18) !important;
+  background: rgba(6, 70, 115, 0.28) !important;
+  transform: translateY(-2px);
+}
+
+/* Inner cards - also flow, no hard lines */
+html body .cards article,
+html body .worlds article {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: none !important;
+  transition: all 0.4s ease !important;
+}
+
+html body .cards article:hover,
+html body .worlds article:hover {
+  background: rgba(126, 232, 255, 0.12) !important;
+  border-color: rgba(126, 232, 255, 0.2) !important;
+  transform: translateY(-6px);
+}
+
+/* Kill inner overlap forever */
+html body .section.long .copy,
+html body .section.long .copy > div {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* SOCIALS HOVER - FIXED */
+html body .socials {
+  gap: 16px !important;
+}
+
+html body .socials .btn,
+html body .socials a {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.35s ease !important;
+  cursor: pointer !important;
+}
+
+html body .socials .btn:hover,
+html body .socials a:hover {
+  background: linear-gradient(90deg, #00d4ff, #7ee8ff) !important;
+  color: #022a4a !important;
+  border-color: transparent !important;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 212, 255, 0.25) !important;
+}
+
+html body .socials .btn.wa:hover {
+  background: linear-gradient(90deg, #25d366, #00e676) !important;
+  color: #fff !important;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.3) !important;
+}
+
+/* No line separators anywhere */
+html body hr,
+html body .divider,
+html body .scroll-hint {
+  border: 0 !important;
+  border-top: 0 !important;
+  opacity: 0.25 !important;
+}
+
+html body footer {
+  border: 0 !important;
+  opacity: 0.6 !important;
+}
+/* BODY PARAGRAPHS - BIGGER FOR READABILITY - FORCE */
+html body .section.long .copy p,
+html body .section.long .two .copy p,
+html body .section.long p,
+html body .connect.long p,
+html body .hero-ocean p,
+html body .cards article p,
+html body .worlds article p,
+html body p {
+  font-size: clamp(21px, 1.65vw, 26px) !important;
+  line-height: 1.85 !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.015em !important;
+  color: rgba(232, 244, 255, 0.92) !important;
+}
+
+/* The story copy - even bigger */
+html body .section.long .copy p {
+  font-size: clamp(22px, 1.7vw, 27px) !important;
+  line-height: 1.9 !important;
+}
+
+/* Keep headings bigger than body but balanced */
+html body .section.long h2 {
+  font-size: clamp(46px, 5vw, 72px) !important;
+}
+
+html body .cards h3,
+html body .worlds h3 {
+  font-size: clamp(24px, 2vw, 30px) !important;
+}
+
+/* EVERY FONT HANDWRITTEN - LIKE YOUR PHOTO */
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&display=swap");
+
+/* Force EVERYTHING to that font */
+html body,
+html body *,
+html body p,
+html body .copy p,
+html body .section.long p,
+html body .cards p,
+html body .worlds p,
+html body .socials .btn,
+html body .btn,
+html body a,
+html body span,
+html body li,
+html body h1,
+html body h2,
+html body h3,
+html body .eyebrow {
+  font-family: "Gochi Hand", "Patrick Hand", cursive !important;
+  letter-spacing: 0.02em !important;
+}
+
+html body h1,
+html body h2 {
+  font-size: clamp(46px, 5.2vw, 74px) !important;
+  line-height: 1 !important;
+  font-weight: 400 !important;
+}
+
+html body p,
+html body .copy p,
+html body .cards p,
+html body .worlds p {
+  font-size: clamp(22px, 1.7vw, 28px) !important;
+  line-height: 1.9 !important;
+  font-weight: 400 !important;
+}
+
+html body .eyebrow {
+  font-size: 16px !important;
+  letter-spacing: 0.12em !important;
+}
+
+html body .btn,
+html body .socials a {
+  font-size: 18px !important;
+}
+font-family: "Patrick Hand", cursive !important;
+/* FIX PHONE VIEW - PASTE AT VERY BOTTOM */
+@media (max-width: 768px) {
+  html body {
+    overflow-x: hidden !important;
+  }
+  html body .nav,
+  html body nav {
+    padding: 12px 14px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  html body .hero,
+  html body .section.hero {
+    padding: 90px 18px 40px !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      #052a4a 80%
+    ) !important;
+  }
+  html body .hero h1,
+  html body .hero .title {
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+    text-align: left !important;
+  }
+  html body .hero .buttons,
+  html body .hero .cta {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+  /* hide your face photo bleeding through on mobile */
+  html body .hero img,
+  html body .hero .portrait {
+    opacity: 0.35 !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: -1 !important;
+  }
+}
+/* FIX PHONE PHOTO - BRING BACK */
+@media (max-width: 768px) {
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-top: 80px !important;
+  }
+  .hero img,
+  .hero .portrait,
+  .hero .hero-img,
+  .hero-img {
+    position: relative !important;
+    z-index: 2 !important;
+    opacity: 1 !important;
+    width: 85% !important;
+    max-width: 340px !important;
+    height: auto !important;
+    margin: 25px auto 0 !important;
+    display: block !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    border-radius: 24px !important;
+  }
+  .hero h1,
+  .hero .title,
+  .hero p {
+    text-align: center !important;
+  }
+  .hero .buttons,
+  .hero .cta {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
